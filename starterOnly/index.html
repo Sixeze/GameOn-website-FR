@@ -57,7 +57,7 @@
           <span class="close" onclick="closeModal()"></span> <!--premier essai de close de modal-->
           <div class="modal-body">
             <form
-              id="inscription"
+               id="inscription"
               name="reserve"
               action="index.html"
               method="get"
@@ -65,51 +65,53 @@
             >
               <div
                 class="formData">
-                <label>Prénom</label><br>
+                <label for="first">Prénom</label><br>
                 <input
                   class="text-control"
                   type="text"
                   id="first"
                   name="first"
                   minlength="2"
-                /><br>
+                  required
+                /><span class="blockError" id="errorFirstName"></span><br>
               </div>
               <div
                 class="formData">
-                <label>Nom</label><br>
+                <label for="last">Nom</label><br>
                 <input
                   class="text-control"
                   type="text"
                   id="last"
                   name="last"
-                /><br>
+                /><span class="blockError" id="errorLastName"></span><br>
               </div>
               <div
                 class="formData">
-                <label>E-mail</label><br>
+                <label for="email">E-mail</label><br>
                 <input
                   class="text-control"
                   type="email"
                   id="email"
                   name="email"
-                /><br>
+                /><span class="blockError" id="errorMail"></span><br>
               </div>
               <div
                 class="formData">
-                <label>Date de naissance</label><br>
+                <label for="birthdate">Date de naissance</label><br>
                 <input
                   class="text-control"
                   type="date"
                   id="birthdate"
                   name="birthdate"
-                /><br>
+                /><span class="blockError" id="errorBirthdate"></span><br>
               </div>
               <div
                 class="formData">
-                <label>À combien de tournois GameOn avez-vous déjà participé ?</label><br>
+                <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label><br>
                 <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
+                <span class="blockError" id="errorQuantity"></span>
               </div>
-              <p class="text-label">Quelles villes ?</p>
+              <p class="text-label">Quelle ville ?</p>
               <div
                 class="formData">
                 <input
@@ -189,6 +191,7 @@
                 <span class="checkbox-icon"></span>
                 Aucune</label
               >
+              <span class="blockError" id="errorLocation"></span>
               </div>
 
               <div
@@ -210,6 +213,7 @@
                   Je souhaite être prévenu des prochains évènements.
                 </label>
                 <br>
+                <span class="blockError" id="errorCGU"></span>
               </div>
               <input
                 class="btn-submit"
@@ -218,7 +222,7 @@
                 value="C'est parti"
               />
             </form>
-            <p style="color: red"; id="erreur"></p>
+            <p id="error" class="blockError"></p>
           </div>
         </div>
       </div>
