@@ -163,7 +163,7 @@ birthdate.addEventListener("input", function () {
     birthdate.style.border = "";
     return true;
   } else {
-    errorBirthdate.innerHTML = "Veuillez entrer une date de naissance valide";
+    errorBirthdate.innerHTML = "Vous devez saisir votre date de naissance";
     birthdate.style.border = "4px solid #e54858";
     return false;
   }
@@ -194,13 +194,22 @@ function locationChecked() {
     cityLocation[5].checked ||
     cityLocation[6].checked
   ) {
-    errorLocation.innerHTML = "";
+    errorLocation.style.display = "none";
     return true;
   } else {
     errorLocation.innerHTML = "Veuillez choisir une option";
     return false;
   }
 }
+
+// radio when checked
+cityLocation[0].addEventListener("click", this.locationChecked);
+cityLocation[1].addEventListener("click", this.locationChecked);
+cityLocation[2].addEventListener("click", this.locationChecked);
+cityLocation[3].addEventListener("click", this.locationChecked);
+cityLocation[4].addEventListener("click", this.locationChecked);
+cityLocation[5].addEventListener("click", this.locationChecked);
+cityLocation[6].addEventListener("click", this.locationChecked);
 
 // Validate CGU and appearring red string when detect error
 checkbox1.addEventListener("input", function () {
